@@ -29,7 +29,7 @@ pipeline{
 			}
 			else{
 				sh(
-			   		script: "aws ec2 create-launch-template-version --launch-template-id $params.LTID --version-description $params.MLTVersion --source-version $params.MLTSVersion  --launch-template-data ImageId='${AMI_ID}'"
+			   		script: "aws ec2 create-launch-template-version --launch-template-id $params.TemplateID --launch-template-data ImageId='${AMI_ID}'"
 				)   
 			}  
                    } 
