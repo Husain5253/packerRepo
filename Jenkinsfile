@@ -22,9 +22,9 @@ pipeline{
 			).trim()
 			echo "ID : ${AMI_ID}"
 			   
-			if(params.LTVersion == '1.0.0'){
+			if(params.Select == 'Launch Template'){
 			   	sh (
-					script: "aws ec2 create-launch-template --launch-template-name $params.TemplateName --version-description $params.LTVersion --launch-template-data ImageId='${AMI_ID}'"
+					script: "aws ec2 create-launch-template --launch-template-name $params.TemplateName --version-description 1.0.0 --launch-template-data ImageId='${AMI_ID}'"
 				)
 			}
 			else{
